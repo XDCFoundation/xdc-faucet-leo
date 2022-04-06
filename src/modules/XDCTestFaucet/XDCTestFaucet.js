@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { httpConstants } from "../../constants";
+import { REDIRECT_URL } from "../../constants";
 import { httpService } from "../../utility/httpService";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Tooltip } from "@material-ui/core";
 
 function XDCTestFaucet() {
-  const [receiver, setXdcAddressInput] = useState("");
+  const [receiver, setReceiver] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
   const [captchaErr, setCaptchaErr] = useState(false);
@@ -36,29 +37,26 @@ function XDCTestFaucet() {
       const data = {
         receiver,
       };
-      const res = await httpService(
+      const response = await httpService(
         httpConstants.METHOD_TYPE.POST,
         { "Content-Type": httpConstants.CONTENT_TYPE.APPLICATION_JSON },
         data,
-        "http://localhost:3000/"
+        process.env.REACT_APP_NODE_URL
       );
-      if (res.success) {
+      if (response.success) {
         setMessage({
           status: true,
           message: "Sent",
-          Hash: res?.success?.txHash,
+          Hash: response?.success?.txHash,
         });
-        console.log(res, "success");
       } else {
         setMessage({ status: true, message: "Failed", Hash: "" });
-        setAppropriateError(res?.error?.message);
-        console.log(res, "err");
+        setAppropriateError(response?.error?.message);
       }
     }
   };
-  console.log(message);
   const inputHandler = (e) => {
-    setXdcAddressInput(e.target.value);
+    setReceiver(e.target.value);
     setInputErr(false);
   };
 
@@ -145,7 +143,7 @@ function XDCTestFaucet() {
                         {message.message}
                       </div>
                     </div>
-                    {appropriateError.length > 2 ? (
+                    {appropriateError?.length > 2 ? (
                       <div className="sm:text-ft3 text-ft1 font-InterRegular text-red-100 text-center mt-1">
                         {appropriateError}
                       </div>
@@ -170,30 +168,36 @@ function XDCTestFaucet() {
                   </div>
                 </div>
                 {message.message === "Sent" ? (
-                  // <a
-                  //   href={url + message?.Hash}
-                  //   className="w-full rounded-lg h-12 flex justify-center items-center mt-7.75 border text-blue-50 sm:text-ft6 text-ft4 font-InterSemiBold border-blue-50 cursor-pointer"
-                  // >
-                  //   View Transaction on Observatory
-                  // </a>
-                  <div className="mt-10 text-ft7 flex items-center justify-center">
-                    <div className="truncate font-InterRegular">
-                      {message?.Hash}
+                  <>
+                    <div className="mt-10 text-ft7 flex items-center justify-center">
+                      <div className="font-InterRegular mr-1">TxHash: </div>
+                      <div className="truncate font-InterRegular text-blue-50">
+                        {message?.Hash}
+                      </div>
+                      <CopyToClipboard text={message?.Hash}>
+                        <Tooltip
+                          title={isCopied ? "Copied" : "Copy"}
+                          placement="top"
+                          onClick={() => setIsCopied(true)}
+                        >
+                          <img
+                            className="cursor-pointer"
+                            src="/images/Copy.svg"
+                            alt=""
+                          />
+                        </Tooltip>
+                      </CopyToClipboard>
                     </div>
-                    <CopyToClipboard text={message?.Hash}>
-                      <Tooltip
-                        title={isCopied ? "Copied" : "Copy"}
-                        placement="top"
-                        onClick={() => setIsCopied(true)}
-                      >
-                        <img
-                          className="cursor-pointer"
-                          src="/images/Copy.svg"
-                          alt=""
-                        />
-                      </Tooltip>
-                    </CopyToClipboard>
-                  </div>
+                    <a
+                      href={
+                        REDIRECT_URL.OBSERVER_TRANSACTION_HASH_URL +
+                        message?.Hash
+                      }
+                      className="w-full rounded-lg h-12 flex justify-center items-center mt-7.75 border text-blue-50 sm:text-ft6 text-ft4 font-InterSemiBold border-blue-50 cursor-pointer"
+                    >
+                      View Transaction on Observatory
+                    </a>
+                  </>
                 ) : (
                   ""
                 )}
