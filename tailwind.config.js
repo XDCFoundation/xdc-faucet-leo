@@ -4,7 +4,7 @@ module.exports = {
     content: [
     ],
     css: [
-        './src/assets/styles/custom.css'
+      './src/assets/styles/custom.css'
     ],
     options: {
       safelist: [
@@ -177,5 +177,5 @@ module.exports = {
     }
   },
   plugins: [],
-  darkMode: 'class'
+  darkMode: false
 }
