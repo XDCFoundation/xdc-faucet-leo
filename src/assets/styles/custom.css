@@ -22,6 +22,23 @@
         font-family: 'Poppins-Medium';
         src: url("../fonts/Poppins/Poppins-Medium.ttf");
     }
+    @font-face {
+        font-family: 'Inter-Regular';
+        src: url("../fonts/Inter/Inter-Regular.ttf");
+    }
+    @font-face {
+        font-family: 'Inter-Medium';
+        src: url("../fonts/Inter/Inter-Medium.ttf");
+    }
+    @font-face {
+        font-family: 'Inter-SemiBold';
+        src: url("../fonts/Inter/Inter-SemiBold.ttf");
+    }
+    @font-face {
+        font-family: 'Inter-Bold';
+        src: url("../fonts/Inter/Inter-Bold.ttf");
+    }
+    
 }
 
 
@@ -83,4 +100,10 @@
 }
 
 
-
+.placeholder-align-custom::-webkit-input-placeholder {
+    text-align: center;
+  }
+  
+.placeholder-align-custom:-moz-placeholder {
+    text-align: center;
+}
