@@ -7,6 +7,7 @@ RUN apt-get update; apt-get -y install gnupg
 WORKDIR /var/www/html
 COPY . /var/www/html/temp
 RUN cd /var/www/html/temp
+RUN npm run build
 RUN mv /var/www/html/temp/build/* /var/www/html
 RUN mv /var/www/html/temp/.htaccess /var/www/html
 
