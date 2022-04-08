@@ -4,7 +4,7 @@ module.exports = {
     content: [
     ],
     css: [
-      './src/assets/styles/custom.css'
+        './src/assets/styles/custom.css'
     ],
     options: {
       safelist: [
@@ -16,7 +16,6 @@ module.exports = {
     },
     extract: (content) => content.match(/[\w-/:]+(?<!:)/g) || []
   },
-  important: true,
   theme: {
     screens: { // specifying screens is mandatory in every tailwind.config file
       xs: "480px",   //min-width 480px
@@ -31,19 +30,27 @@ module.exports = {
       current: 'currentColor',
       white: "#FFFFFF",
       black: {
-        50: "#141414"
+        50: "#141414",
+        100:"#292929"
       },
       primary: {
-        50: "#FFDB0A"
+        50: "#F5F8FF"
       },
       blue: {
-        50: "#3D61B0"
+        50: "#2358E5",
+        100: "#2149B9",
+        200: "#102C78"
       },
       grey: {
-        50: "#F6FAFC"
+        50: "#9AA2B5",
+        100: "#6C6C6C",
+        150: "#B5B5B5",
+        200: "#F5F5F5",
+        250: "#A5A5A5",
       },
       red: {
-        50: "#FF6142"
+        50: "#FF6142",
+        100: "#ff1a1b",
       },
       navyBlue: {
         50: "#26458C"
@@ -70,33 +77,37 @@ module.exports = {
       }],
       'ft4': ['16px', {
         letterSpacing: '0em',
-        lineHeight: '25px',
+        lineHeight: '20px',
       }],
       'ft5': ['16px', {
         letterSpacing: '0em',
         lineHeight: '22px',
       }],
-      'ft6': ['18px', {
+      'ft6': ['17px', {
         letterSpacing: '0em',
-        lineHeight: '27px',
+        lineHeight: '20px',
       }],
-      'ft7': ['22px', {
+      'ft7': ['18px', {
         letterSpacing: '0em',
-        lineHeight: '33px',
+        lineHeight: '21px',
       }],
-      'ft8': ['24px', {
+      'ft8': ['20px', {
+        letterSpacing: '0em',
+        lineHeight: '24px',
+      }],
+      'ft9': ['24px', {
         letterSpacing: '0em',
         lineHeight: '35px',
       }],
-      'ft9': ['34px', { //H3
+      'ft10': ['26px', { //H3
         letterSpacing: '0em',
-        lineHeight: '62px',
+        lineHeight: '31px',
       }],
-      'ft10': ['38px', {
+      'ft11': ['38px', {
         letterSpacing: '0em',
         lineHeight: '57px',
       }],
-      'ft11': ['44px', {
+      'ft12': ['44px', {
         letterSpacing: '0em',
         lineHeight: '62px',
       }],
@@ -116,6 +127,18 @@ module.exports = {
       PoppinsMedium: [
         "Poppins-Medium", 'sans-serif'
       ],
+      InterBold: [
+        "Inter-Bold", 'sans-serif'
+      ],
+      InterSemiBold: [
+        "Inter-SemiBold", 'sans-serif'
+      ],
+      InterRegular: [
+        "Inter-Regular", 'sans-serif'
+      ],
+      InterMedium: [
+        "Inter-Medium", 'sans-serif'
+      ],
     },
 
 
@@ -132,18 +155,29 @@ module.exports = {
       outline: "0px 0px 0px 3px rgba(0, 0, 0, 0.5)"
     },
 
-    backgroundImage: theme => ({
-      'dummy': "url('/public/images/Mask-Group-3.png')", //tailwind class => bg-dummy
-    }),
+    // backgroundImage: theme => ({
+    //   'dummy': "url('/public/images/Mask-Group-3.png')", //tailwind class => bg-dummy
+    // }),
 
     extend: { //theme options are to be extended with custom variants and not overridden (1 unit = 4px)
       spacing: { //common for width, height, padding, margin
-        4.5: "18px",         //p-4.5 , m-4.5 , w-4.5, h-4.5
+        1.75: "7px",
+        2.25: "9px",
+        2.75: "11px",
+        3.25: "13px",
+        3.75: "15px",
+        4.5: "18px",//p-4.5 , m-4.5 , w-4.5, h-4.5
+        4.75: "19px",
+        6.75: "27px",
         7.75: "31px",
         9.5: "38px",
+        10.25: "41px",
+        11: "44px",
+        11.25: "45px",
         11.5: "46px", //divide the required value by 4 to get the key name (46/4 = 11.5)
         13: "52px",
         15: "60px",
+        18.25: "73px",
         18.5: "74px",
         19.25: "77px",
         20.5: "82px",
@@ -157,11 +191,63 @@ module.exports = {
         61: "244px",
         65: "260px",
       },
+      maxWidth: {
+        123.75: "495px",
+      },
+      minHeight: {
+        115: "460px"
+      },
       borderWidth: {
 
       },
       borderRadius: { //same as border width
         '5-5xl': "34px",
+      },
+      scale: {
+        144: "1.44",
+      },
+      animation: {
+        progress: "loading 3s linear infinite",
+      },
+      keyframes: {
+        loading: {
+          "0%": {
+            width: "16.6%",
+          },
+          "16.5%": {
+            width: "16.6%",
+          },
+          "16.6%": {
+            width: "33.3%",
+          },
+          "33.2%": {
+            width: "33.3%",
+          },
+          "33.3%": {
+            width: "49.9%;",
+          },
+          "49.8%": {
+            width: "49.9%;",
+          },
+          "49.9%": {
+            width: "66.5%",
+          },
+          "66.4%": {
+            width: "66.5%",
+          },
+          "66.5%": {
+            width: "83.1%",
+          },
+          "83%": {
+            width: "83.1%",
+          },
+          "83.1%": {
+            width: "100%",
+          },
+          "100%": {
+            width: "100%",
+          },
+        },
       },
     },
   },
@@ -177,5 +263,5 @@ module.exports = {
     }
   },
   plugins: [],
-  darkMode: false
+  darkMode: 'class'
 }

@@ -21,3 +21,7 @@ export const httpConstants = {
     },
     API_END_POINT: {}
 };
+
+export const REDIRECT_URL = {
+    OBSERVER_TRANSACTION_HASH_URL : "https://observer.xdc.org/transaction-details/",
+}
