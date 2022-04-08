@@ -21,7 +21,7 @@ export const httpService = (method, headers, data, url) => {
                     //     // auto logout if 401 response returned from api
                     //     // location.reload(true);
                     // }
-                    const error = data.responseCode === 404 ? data : (data && data.message) || response.statusText;
+                    const error = data.error.code === 500 ? data : (data && data.message) || response.statusText;
                     return Promise.reject(error);
                 }
 
