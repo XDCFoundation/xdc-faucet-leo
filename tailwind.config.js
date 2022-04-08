@@ -1,21 +1,8 @@
 module.exports = {
-  purge: {
+  purge: [
     // enabled: true,
-    content: [
-    ],
-    css: [
-        './src/assets/styles/custom.css'
-    ],
-    options: {
-      safelist: [
-      ],
-      safelistPatterns: [
-      ],
-      keyframes: true,
-      fontFace: true,
-    },
-    extract: (content) => content.match(/[\w-/:]+(?<!:)/g) || []
-  },
+    "./src/modules/**/*.{js,jsx,ts,tsx}"
+  ],
   theme: {
     screens: { // specifying screens is mandatory in every tailwind.config file
       xs: "480px",   //min-width 480px

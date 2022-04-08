@@ -1,3 +1,4 @@
+const tailwindcss = require("tailwindcss");
 // craco.config.js
 module.exports = {
     style: {
@@ -5,6 +6,7 @@ module.exports = {
             plugins: [
                 require('tailwindcss'),
                 require('autoprefixer'),
+                tailwindcss("./tailwind.config.js"),
             ],
         },
     },
