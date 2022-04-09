@@ -5,6 +5,10 @@ import { REDIRECT_URL } from "../../constants";
 import { httpService } from "../../utility/httpService";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Tooltip } from "@material-ui/core";
+import CopyImage from "../../assets/images/Copy.png"
+import SuccessImage from "../../assets/images/success.png"
+import CrossImage from "../../assets/images/Cross_Mark.png"
+import XDCImage from "../../assets/images/XDC-Icon.png"
 
 function XDCTestFaucet() {
   const [receiver, setReceiver] = useState("");
@@ -65,7 +69,7 @@ function XDCTestFaucet() {
       <div className="w-full h-screen bg-primary-50 pt-18.25 px-3">
         <img
           className="h-20 w-20 mx-auto"
-          src="/images/XDC-icon-128X128.svg"
+          src={XDCImage}
           alt=""
         />
         <div className="min-h-115 max-w-123.75 flex flex-col items-center bg-white mx-auto rounded-lg mt-7 px-6.75 pt-6.75 pb-11">
@@ -129,13 +133,13 @@ function XDCTestFaucet() {
                       {message.message === "Sent" ? (
                         <img
                           className="h-4.75 w-4.75"
-                          src="/images/Success.svg"
+                          src={SuccessImage}
                           alt=""
                         />
                       ) : (
                         <img
                           className="h-4.75 w-4.75"
-                          src="/images/Cross_Mark.svg"
+                          src={CrossImage}
                           alt=""
                         />
                       )}
@@ -182,7 +186,7 @@ function XDCTestFaucet() {
                         >
                           <img
                             className="cursor-pointer"
-                            src="/images/Copy.svg"
+                            src={CopyImage}
                             alt=""
                           />
                         </Tooltip>
