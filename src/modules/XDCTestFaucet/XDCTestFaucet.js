@@ -90,7 +90,7 @@ function XDCTestFaucet() {
                 />
                 {inputErr ? (
                   <div className="sm:text-ft3 text-ft1 font-InterRegular text-red-100 text-center">
-                    Invalid Address
+                    Please enter a valid address
                   </div>
                 ) : (
                   ""
