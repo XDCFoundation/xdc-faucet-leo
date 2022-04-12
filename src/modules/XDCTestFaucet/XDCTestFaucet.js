@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { httpConstants } from "../../constants";
-import { REDIRECT_URL } from "../../constants";
 import { httpService } from "../../utility/httpService";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Tooltip } from "@material-ui/core";
@@ -190,15 +189,16 @@ function XDCTestFaucet() {
                             </Tooltip>
                           </CopyToClipboard>
                         </div>
-                        <a
+                        {/* This observatory redirect button is commented because faucet transaction details is not available in observatory yet*/}
+                        {/* <a
                           href={
-                            REDIRECT_URL.OBSERVER_TRANSACTION_HASH_URL +
+                            REDIRECT_URL.OBSERVATORY_TRANSACTION_HASH_URL +
                             message?.Hash
                           }
                           className="w-full rounded-lg h-12 flex justify-center items-center mt-7.75 border text-blue-50 sm:text-ft6 text-ft4 font-InterSemiBold border-blue-50 cursor-pointer"
                         >
                           View Transaction on Observatory
-                        </a>
+                        </a> */}
                       </>
                     ) : (
                       ""

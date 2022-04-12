@@ -23,5 +23,5 @@ export const httpConstants = {
 };
 
 export const REDIRECT_URL = {
-    OBSERVER_TRANSACTION_HASH_URL : "https://observer.xdc.org/transaction-details/",
+    OBSERVATORY_TRANSACTION_HASH_URL : "https://observer.xdc.org/transaction-details/",
 }
