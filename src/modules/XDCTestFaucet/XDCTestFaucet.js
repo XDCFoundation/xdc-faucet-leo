@@ -70,7 +70,7 @@ function XDCTestFaucet() {
           <div>
             <img className="h-20 w-20 mx-auto" src={XDCImage} alt="" />
             <div className="min-h-115 max-w-123.75 flex flex-col items-center bg-white mx-auto rounded-lg mt-7 px-6.75 pt-6.75 mb-28 pb-12">
-              <div className="sm:text-ft10 text-ft9 font-InterSemiBold">
+              <div className="sm:text-ft10 text-ft9 font-InterSemiBold text-black-100">
                 <span className="text-blue-200">XDC</span>Drop
               </div>
               <div className="text-grey-100 sm:text-ft8 text-ft7 font-InterMedium mt-1.75">
@@ -97,7 +97,7 @@ function XDCTestFaucet() {
                 {!isLoading ? (
                   <>
                     <div className="w-full flex justify-center flex-col items-center">
-                      <div className="sm:mt-8 mt-5 sm:mb-5 mb-3 transform sm:scale-144">
+                      <div className="sm:mt-8 mt-5 sm:mb-5 mb-3 transform sm:scale-145 ml-0.25">
                         <HCaptcha
                           sitekey="6ec32851-ea77-4623-8b40-5f6c76353f0c"
                           onVerify={(token, key) => validateCaptcha(token, key)}

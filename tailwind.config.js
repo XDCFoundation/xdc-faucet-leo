@@ -148,6 +148,7 @@ module.exports = {
 
     extend: { //theme options are to be extended with custom variants and not overridden (1 unit = 4px)
       spacing: { //common for width, height, padding, margin
+        0.25: "1px",
         1.75: "7px",
         2.25: "9px",
         2.75: "11px",
@@ -194,7 +195,7 @@ module.exports = {
         '5-5xl': "34px",
       },
       scale: {
-        144: "1.44",
+        145: "1.46",
       },
       animation: {
         progress: "loading 3s linear infinite",
