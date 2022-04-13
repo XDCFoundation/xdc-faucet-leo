@@ -148,6 +148,7 @@ module.exports = {
 
     extend: { //theme options are to be extended with custom variants and not overridden (1 unit = 4px)
       spacing: { //common for width, height, padding, margin
+        0.25: "1px",
         1.75: "7px",
         2.25: "9px",
         2.75: "11px",
@@ -164,6 +165,7 @@ module.exports = {
         11.5: "46px", //divide the required value by 4 to get the key name (46/4 = 11.5)
         13: "52px",
         15: "60px",
+        16.5: "66px",
         18.25: "73px",
         18.5: "74px",
         19.25: "77px",
@@ -176,7 +178,9 @@ module.exports = {
         45: "180px",
         57.5: "230px",
         61: "244px",
-        65: "260px",
+      },
+      height: {
+        "90v": "90vh",
       },
       maxWidth: {
         123.75: "495px",
@@ -191,7 +195,7 @@ module.exports = {
         '5-5xl': "34px",
       },
       scale: {
-        144: "1.44",
+        146: "1.46",
       },
       animation: {
         progress: "loading 3s linear infinite",
