@@ -41,6 +41,9 @@
     
 }
 
+body {
+    background-color: #F5F8FF;
+}
 
 .min-width-10px{
     min-width: 10px;
