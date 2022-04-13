@@ -195,7 +195,7 @@ module.exports = {
         '5-5xl': "34px",
       },
       scale: {
-        145: "1.46",
+        146: "1.46",
       },
       animation: {
         progress: "loading 3s linear infinite",

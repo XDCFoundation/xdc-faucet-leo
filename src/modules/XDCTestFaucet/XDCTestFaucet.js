@@ -97,7 +97,7 @@ function XDCTestFaucet() {
                 {!isLoading ? (
                   <>
                     <div className="w-full flex justify-center flex-col items-center">
-                      <div className="sm:mt-8 mt-5 sm:mb-5 mb-3 transform sm:scale-145 ml-0.25">
+                      <div className="sm:mt-8 mt-5 sm:mb-5 mb-3 transform sm:scale-146 ml-0.25">
                         <HCaptcha
                           sitekey="6ec32851-ea77-4623-8b40-5f6c76353f0c"
                           onVerify={(token, key) => validateCaptcha(token, key)}
