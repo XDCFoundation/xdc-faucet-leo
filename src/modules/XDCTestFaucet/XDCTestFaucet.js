@@ -99,7 +99,7 @@ function XDCTestFaucet() {
                     <div className="w-full flex justify-center flex-col items-center">
                       <div className="sm:mt-8 mt-5 sm:mb-5 mb-3 transform sm:scale-146 ml-0.25">
                         <HCaptcha
-                          sitekey="6ec32851-ea77-4623-8b40-5f6c76353f0c"
+                          sitekey={process.env.REACT_APP_HCAPTCHA_SECRET_KEY}
                           onVerify={(token, key) => validateCaptcha(token, key)}
                         />
                       </div>
@@ -192,7 +192,7 @@ function XDCTestFaucet() {
                         {/* This observatory redirect button is commented because faucet transaction details is not available in observatory yet*/}
                         {/* <a
                           href={
-                            REDIRECT_URL.OBSERVATORY_TRANSACTION_HASH_URL +
+                            process.env.REACT_APP_OBSERVATORY_REDIRECT_URL +
                             message?.Hash
                           }
                           className="w-full rounded-lg h-12 flex justify-center items-center mt-7.75 border text-blue-50 sm:text-ft6 text-ft4 font-InterSemiBold border-blue-50 cursor-pointer"

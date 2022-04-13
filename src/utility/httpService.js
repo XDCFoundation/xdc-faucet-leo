@@ -1,5 +1,4 @@
-import {httpConstants} from "../constants";
-// import {history} from "../managers/history";
+import {httpConstants} from "../constants"
 
 export const httpService = (method, headers, data, url) => {
     const requestOptions = {
