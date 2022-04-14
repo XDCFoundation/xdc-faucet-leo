@@ -208,8 +208,8 @@ function XDCTestFaucet() {
               </form>
             </div>
           </div>
-          <div className="flex justify-center w-full mb-10">
-            <span className="text-center text-ft4 text-grey-50 font-InterMedium">
+          <div className="flex justify-center w-full">
+            <span className="text-center text-ft4 text-grey-50 font-InterMedium  md:h-21.75 h-16">
               Powered by XDC
             </span>
           </div>
